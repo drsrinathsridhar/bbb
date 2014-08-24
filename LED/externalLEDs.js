@@ -5,8 +5,9 @@ var leds = [ "P8_7", "P8_8", "P8_9", "P8_10"
 	   , "P8_15", "P8_16", "P8_17", "P8_18"
 	   , "P9_11", "P9_12", "P9_13"
 	   ];
-//var nLEDs = 10;
 var nLEDs = leds.length;
+nLEDs = 2; // Overwrite previous
+var intervalTime = 200;
 
 for (var i = 0; i < nLEDs; ++i) {
     b.pinMode(leds[i], b.OUTPUT, 7);
@@ -15,7 +16,7 @@ for (var i = 0; i < nLEDs; ++i) {
 
 var currentpin = 0;
 var direction = 1;
-setInterval(nextpin, 1);
+setInterval(nextpin, intervalTime);
 
 function nextpin() {
     if(direction == 1 && currentpin >= nLEDs - 1) {
